@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    compile rootProject.ext.dependencies.SupportV4
+    compile rootProject.ext.dependencies.SupportV7
+    compile rootProject.ext.dependencies.Constraintlayout
+    compile rootProject.ext.dependencies.ButterKnife
+    annotationProcessor rootProject.ext.annotationProcessor.ButterKnifeCompiler
+    testCompile rootProject.ext.testDependencies.Junit4
+    androidTestCompile rootProject.ext.testDependencies.Runner
+    androidTestCompile(rootProject.ext.testDependencies.Espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+}

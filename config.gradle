@@ -1,0 +1,97 @@
+def SupportVersion = "28.0.0"
+def ButterKnifeVersion = "8.8.1"
+
+def GreenDaoVersion = "3.2.2"
+
+def GlideVersion = "4.8.0"
+ext {
+
+
+    android = [
+            compileSdkVersion: 28,
+            minSdkVersion    : 16,
+            targetSdkVersion : 28,
+            buildToolsVersion: "27.0.3",
+    ]
+
+    dependencies = [
+            //Google https://mvnrepository.com/artifact/com.android.support
+            SupportV4           : "com.android.support:support-v4:${SupportVersion}", //v4支持包
+            SupportV7           : "com.android.support:appcompat-v7:${SupportVersion}", //v7支持包
+            Constraintlayout    : "com.android.support.constraint:constraint-layout:1.1.3", //约束布局
+            RecyclerView        : "com.android.support:recyclerview-v7:${SupportVersion}", //重用布局
+            CardView            : "com.android.support:cardview-v7:${SupportVersion}",//卡片布局
+            Multidex            : "com.android.support:multidex:1.0.3",  //低版本分包
+            Design              : "com.android.support:design:${SupportVersion}", //新版本风格
+
+            //ButterKnife  https://github.com/JakeWharton/butterknife
+            ButterKnife         : "com.jakewharton:butterknife:${ButterKnifeVersion}",
+            LibButterKnife      : "com.jakewharton:butterknife-gradle-plugin:${ButterKnifeVersion}",//LibButterKnife
+
+            //侧滑菜单  https://github.com/mcxtzhang/SwipeDelMenuLayout
+            SwipeDelMenuLayout  : "com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0",
+
+            //流式布局  https://github.com/google/flexbox-layout
+            Flexbox             : "com.google.android:flexbox:1.1.0",
+
+            //图片选择器 https://github.com/yanzhenjie/Album
+            Album               : "com.yanzhenjie:album:2.1.2",
+            //图片裁剪框架 https://github.com/yanzhenjie/Durban
+            Durban              : "com.yanzhenjie:durban:1.0.1",
+            //圆形图片
+            Roundedimageview    : "com.makeramen:roundedimageview:2.3.0",
+
+            //数据库
+            Greendao            : "org.greenrobot:greendao:${GreenDaoVersion}",
+
+            //时间选择控件 https://github.com/Bigkoo/Android-PickerView
+            PickerView          : "com.contrarywind:Android-PickerView:4.1.6",
+
+            //二维码扫描 https://github.com/bingoogolapple/BGAQRCode-Android
+            Zxing               : "cn.bingoogolapple:bga-qrcode-zxing:1.3.4",
+            // 图片浏览缩放控件 https://github.com/chrisbanes/PhotoView
+            PhotoView           : "com.github.chrisbanes:PhotoView:2.2.0",
+
+            //汉字拼音转化 功能全面，但是内存占用比tinypinyin高 https://github.com/open-android/pinyin4j
+            Pinyin4j            : "com.github.open-android:pinyin4j:2.5.0",
+            //简化版汉字拼音转化，无视多音字，无视多个声调，效率为pinyin4j的4倍 https://github.com/promeG/TinyPinyin
+            Tinypinyin          : "com.github.promeg:tinypinyin:1.0.0",
+            //下拉上拉刷新框架 https://github.com/scwang90/SmartRefreshLayout
+            SmartRefreshLayout  : "com.scwang.smartrefresh:SmartRefreshLayout:1.0.3",
+            //百度移动统计
+            BaiduMobstat        : "com.baidu.mobstat:mtj-sdk:latest.integration",
+
+            //阿里的快速json实例化框架  https://github.com/alibaba/fastjson
+            Fastjson            : "com.alibaba:fastjson:1.1.70.android",
+
+            //图片加载框架 https://github.com/bumptech/glide
+            Glide               : "com.github.bumptech.glide:glide:{$GlideVersion}",
+
+            //边界弹性滑动依赖 https://github.com/EverythingMe/overscroll-decor
+            OverscrollDecor     : "me.everything:overscroll-decor-android:1.0.4",
+            //https://github.com/wasabeef/glide-transformations Glide版本图片处理 圆角，圆形等
+            GlideTransformations: "jp.wasabeef:glide-transformations:4.0.0",
+            //给app快捷键上增加未读信息的库 https://github.com/leolin310148/ShortcutBadger#shortcutbadger-
+            ShortcutBadger      : "me.leolin:ShortcutBadger:1.1.22"
+    ]
+
+    annotationProcessor = [
+            ButterKnifeCompiler: "com.jakewharton:butterknife-compiler:${ButterKnifeVersion}",
+            GlideCompiler      : "com.github.bumptech.glide:compiler:${GlideVersion}"
+    ]
+
+    testDependencies = [
+            Junit4  : "junit:junit:4.12",
+
+
+            //Google库 https://mvnrepository.com/artifact/com.android.support.test/runner
+            Runner  : "com.android.support.test:runner:1.0.1",
+            Espresso: "com.android.support.test.espresso:espresso-core:3.0.2-alpha1"
+    ]
+}
+
+//androidX要求最小版本支持28 ，不符合目前用户目标，目前用户目标为16 所以暂时弃用
+//Google库  https://mvnrepository.com/artifact/androidx.test
+//            Constraintlayout    : "androidx.constraintlayout:constraintlayout:1.1.3",
+//            Appcompat           : "androidx.appcompat:appcompat:1.0.0",
+//            Constraintlayout    : "com.android.support.constraint:constraint-layout:2.0.0-alpha2", //约束布局 要求gradle版本3以上

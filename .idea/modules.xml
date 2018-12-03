@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AppStub/AppStub.iml" filepath="$PROJECT_DIR$/AppStub/AppStub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StoreDemo.iml" filepath="$PROJECT_DIR$/StoreDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/buildSrc/gradle-small.iml" filepath="$PROJECT_DIR$/buildSrc/gradle-small.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libstyle/libstyle.iml" filepath="$PROJECT_DIR$/libstyle/libstyle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libutil/libutil.iml" filepath="$PROJECT_DIR$/libutil/libutil.iml" />
+    </modules>
+  </component>
+</project>
