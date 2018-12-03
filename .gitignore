@@ -5,6 +5,7 @@
 
 #Samll 插件自动生成文件
 build-small/
+smallLibs/
 
 # Files for the ART/Dalvik VM
 *.dex
